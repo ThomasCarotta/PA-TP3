@@ -7,7 +7,7 @@ const RocketInfo = async () => {
   const rockets = await getData();
 
   const rocket = rockets.find(
-    (rocket) => rocket.flight_number === parseInt(id)
+    (rocket) => rocket.id === id
   );
 
   if (!rocket) {
