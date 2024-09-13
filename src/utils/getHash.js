@@ -1,5 +1,6 @@
-const getHash = () => 
-   location.hash.slice(1).toLocaleLowerCase().split('/')[1] || '/' 
 
-
-export default getHash;
+const getHash = () => {
+   return location.hash.slice(1).toLowerCase() || '/';
+ };
+ 
+ export default getHash;

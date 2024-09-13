@@ -1,23 +1,28 @@
-import getData from '../utils/getData';
-import getHash from '../utils/getHash';
-
+import getData from "../utils/getData";
 const Home = async () => {
-    const Rockets = await getData();
+  const rockets = await getData();
 
-    const view =  `
-        <div class="Rockets">
-        ${Rockets.map(rocket => `
-            <article class="Rocket-item">
-                <a href="#/info/${rocket.id}">   
+  const view = `
+       <div class="Rockets">
+    ${rockets
+      .map(
+        (rocket) => `
+        <article class="Rocket-item">
+            <a href="#/info/${rocket.id}">
+                <div class="Rocket-card">
                     <img src="${rocket.links.patch.small}" alt="${rocket.name}">
                     <h2>${rocket.name}</h2>
-                </a>
-            </article>
-        `).join('')}
-        </div>
+                </div>
+            </a>
+        </article>
     `
-    return view;
-}
+      )
+      .join("")}
+</div>
+
+    `;
+  return view;
+};
 
 export default Home;
 

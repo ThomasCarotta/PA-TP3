@@ -1,18 +1,18 @@
+
 const API = 'https://api.spacexdata.com/v5/launches';
 
-const getData = async (id) => {
-    const apiURL = id ? `${API}${id}` : API;
-
+const getData = async () => {
     try {
-        const response = await fetch(apiURL);
+        const response = await fetch(API);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         const data = await response.json();
-        console.log(data);
         return data;
-
-    } catch(error) {
-        console.log('Fetch Error..!!', error);
-    };
-    
+    } catch (error) {
+        console.error('ERROR:', error);
+        return []; 
+    }
 };
 
 export default getData;
