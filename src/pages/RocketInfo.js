@@ -2,7 +2,7 @@ import getHash from "../utils/getHash";
 import getData from "../utils/getData";
 
 const RocketInfo = async () => {
-  const id = getHash().split("/")[2]; // Extraer el ID del hash
+  const id = getHash().split("/")[2];
   console.log("id: ", getHash());
   const rockets = await getData();
 
